@@ -1,0 +1,106 @@
+#This is SIMP CALC, a simple calculation program
+
+print("Welcome to SIMP CALC, the world's best calculation program!")
+print("" *3)
+
+# Functions to complete calculations
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    return x / y
+
+# The main program opperation
+
+def main():
+
+
+# Ask for the desired opperation and ensure it is a valid response
+
+    operator = input("Would you like to add, subtract, multiply or divide? ")
+
+    while True:
+        if operator.upper() == "ADD":
+            break
+
+        elif operator.upper() == "SUBTRACT":
+            break
+
+        elif operator.upper() == "MULTIPLY":
+            break
+
+        elif operator.upper() == "DIVIDE":
+            break
+
+        print("Please select a valid operation.")
+        operator = input("Would you like to add, subtract, multiply or divide? ")
+
+# Ask user for numbers to calculate and ensure that it is a valid response
+        
+    while True:
+        try:
+            num1 = eval(input("What is the first number to be calculated? "))
+            break
+        except Exception:
+            print("Invalid Input")
+
+    while True:
+        try:
+            num2 = eval(input("What is the second number to be calculated? "))
+            break
+        except Exception:
+            print("Invalid Input")
+
+    print("Please wait while I calculate your numbers...")
+    print("...\n" *3)
+    print("")
+    print("Ok, this is what I have:")
+    print("")
+
+# Perform calculations and give the answer
+
+    if operator.upper() == "ADD":
+        print(num1, " + ", num2, " = ", add(num1, num2))
+
+    elif operator.upper() == "SUBTRACT":
+        print(num1, " - ", num2, " = ", subtract(num1, num2))
+
+    elif operator.upper() == "MULTIPLY":
+        print(num1, " * ", num2, " = ", round(multiply(num1, num2), 2))
+
+    elif operator.upper() == "DIVIDE":
+        print(num1, " / ", num2, " = ", round(divide(num1, num2), 2))
+        
+    print("")
+
+    return
+
+
+main()
+
+# Ask user if they want to do it again, if not say goodbye
+
+repeat = input("Would you like to calculate something else? ")
+
+while True:
+    if repeat.upper() == "NO":
+        print("" *3)
+        print("Thank you for using SIMP CALC, the world's best calculator!")
+        print("")
+        print("GOODBYE!")
+        break
+    elif repeat.upper() == "YES":
+        print("")
+        main()
+        repeat = input("Would you like to calculate something else? ")
+    else:
+        print("Invalid Response")
+        repeat = input("Would you like to calculate something else? ")
+
